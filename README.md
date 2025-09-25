@@ -7,3 +7,5 @@ Windows (PowerShell or Explorer):
 (e.g., C:\Users\<YourName>\AppData\Roaming\yt-dlp\config.txt)
 
 New Config(4K then 1080p) + Throttle Fix. Download aria2c via scoop (powershell) - ask chatgpt
+
+To Update latest version via pip bcz i installed via pip & python not python3 (CMD) : python -m pip install -U "yt-dlp[default]"
