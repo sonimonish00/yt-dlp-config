@@ -1,4 +1,5 @@
-Pre-requiste : python, ffmpeg
+Pre-requiste : python, ffmpeg \
+[Guide](https://www.rapidseedbox.com/blog/yt-dlp-complete-guide)
 
 Save Location : 
 > Windows: C:\Users\sonim\yt-dlp.conf (Or see https://github.com/yt-dlp/yt-dlp/#configuration) \
