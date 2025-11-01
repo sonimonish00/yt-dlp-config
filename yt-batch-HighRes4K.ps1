@@ -169,12 +169,20 @@ $ytOptions = @(
 # Run yt-dlp
 Write-Host "Starting downloads with yt-dlp..."
 try {
-    # If the scoop-installed yt-dlp is available on PATH this will run it.
     & yt-dlp @ytOptions
+    $exitCode = $LASTEXITCODE
+    if ($exitCode -eq 0) {
+        Write-Host "`n✅ All downloads completed successfully. Clearing URL list..."
+        Clear-Content $URLFile
+        Write-Host "YT-url.txt has been cleared."
+    }
+    else {
+        Write-Host "`n⚠️ yt-dlp exited with code $exitCode. Some downloads may have failed."
+        Write-Host "YT-url.txt will NOT be cleared. Please review failed downloads."
+    }
 }
 catch {
     Write-Host "❌ Failed to run yt-dlp: $_"
+    Write-Host "YT-url.txt will NOT be cleared due to error."
     exit 1
 }
-
-Write-Host "`n=== All tasks complete ==="
